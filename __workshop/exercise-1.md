@@ -17,11 +17,11 @@ The tweet content is being passed as `props` to the Tweet component. We need to 
 
 ## Steps
 
-1. Create a file called `TweetContext.js`.
-2. Declare a variable called `TweetContext` and a component called `TweetProvider`.
-3. Move the tweet data to the that provider and make it available to the App via the `value` attribute.
-4. Modify `App.js` to make the context available to the entire app.
-5. Modify `Tweet.js` and any child components that need to pull the data from `TweetContext`.
+<!-- 1. Create a file called `TweetContext.js`. -->
+<!-- 2. Declare a variable called `TweetContext` and a component called `TweetProvider`. -->
+<!-- 3. Move the tweet data to the that provider and make it available to the App via the `value` attribute. -->
+<!-- 4. Modify `App.js` to make the context available to the entire app. -->
+<!-- 5. Modify `Tweet.js` and any child components that need to pull the data from `TweetContext`. -->
 
 **HINT:** We'll consider this data to be immutable (doesn't change) for now. So there is no need to use state yet. We just want all of the data to originate in the Context and be available to the entire app.
 

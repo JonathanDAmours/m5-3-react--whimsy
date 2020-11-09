@@ -1,34 +1,41 @@
-import React, { useContext } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import Header from "./Header";
 import ActionBar from "./ActionBar";
+import { useTweet } from "../TweetContext";
 
-const Tweet = ({
-  displayName,
-  username,
-  avatarSrc,
-  tweetContents,
-  isRetweetedByCurrentUser,
-  isLikedByCurrentUser,
-}) => {
+const Tweet = () => {
+  const { tweetContents, date, numOfLikes, numOfRetweets } = useTweet();
+
   return (
     <Wrapper>
-      <Header
-        displayName={displayName}
-        username={username}
-        avatarSrc={avatarSrc}
-      />
+      <Header />
       <TweetContents>{tweetContents}</TweetContents>
+      <Timestamp>{date}</Timestamp>
+      <Stats>
+        <Span>{numOfRetweets}</Span> Retweets
+        <SpanLikes>{numOfLikes}</SpanLikes> Likes
+      </Stats>
       <Divider />
-      <ActionBar
-        isRetweetedByCurrentUser={isRetweetedByCurrentUser}
-        isLikedByCurrentUser={isLikedByCurrentUser}
-      />
+      <ActionBar />
       <Divider />
     </Wrapper>
   );
 };
+
+const Span = styled.span`
+  font-weight: bold;
+  margin-right: 5px;
+  color: #2e2e2e;
+`;
+
+const SpanLikes = styled.span`
+  font-weight: bold;
+  margin-right: 5px;
+  margin-left: 15px;
+  color: #2e2e2e;
+`;
 
 const Wrapper = styled.div`
   background: white;
@@ -59,6 +66,8 @@ const Stats = styled.div`
   display: flex;
   align-items: center;
   height: 48px;
+  color: grey;
+  border-top: 1px solid #eeeeee;
 `;
 
 export default Tweet;
